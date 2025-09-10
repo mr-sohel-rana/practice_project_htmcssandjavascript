@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Clicker</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    #heart-container {
+      position: relative;
+    }
+
+    #heart {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #heart.double-click {
+      transform: scale(2);
+    }
+
+    #message {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      color: red;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="heart-container">
+  <img id="heart" src="heart.png" alt="Heart">
+  <div id="message">Double-clicked!</div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const heart = document.getElementById("heart");
+    const message = document.getElementById("message");
+    let clickCount = 0;
+
+    heart.addEventListener("click", function () {
+      clickCount++;
+
+      if (clickCount === 1) {
+        // Single click
+        setTimeout(function () {
+          if (clickCount === 1) {
+            // Handle single click action (e.g., show heart animation)
+            heart.classList.add("double-click");
+          }
+          clickCount = 0;
+        }, 200);
+      } else if (clickCount === 2) {
+        // Double click
+        message.style.display = "block";
+        setTimeout(function () {
+          message.style.display = "none";
+          clickCount = 0;
+        }, 1000);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

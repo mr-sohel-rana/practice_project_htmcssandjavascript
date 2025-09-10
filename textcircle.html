@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+display: flex;
+align-items: center;
+ justify-content: center;
+ height: 100vh;
+margin: 0;
+background-color: #080707;
+        }
+
+.marquee-container {
+overflow: hidden;
+white-space: nowrap;
+}
+
+.marquee {
+display: inline-block;
+animation: marqueeAnimation 10s linear infinite;
+font-size: 24px;
+padding: 10px;
+background-color: #f407a9;
+color: white;
+box-shadow: 0 0 1px white;
+border-radius: 8px;
+margin: 5px;
+        }
+
+@keyframes marqueeAnimation {
+from {
+        transform: translateX(100%);
+    }
+to {
+    transform: translateX(-100%);
+    }
+}
+</style>
+</head>
+<body>
+    <div class="marquee-container">
+        <div class="marquee">
+            S U B S C R I B E  S H A R E C O M M O N E N T
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Meter with Input</title>
+    <style>
+        .speed-meter {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 10px solid #ccc;
+            border-radius: 50%;
+            margin: 50px auto;
+        }
+
+        .speed-needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4px;
+            height: 90px;
+            background-color: red;
+            transform-origin: 50% 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .speed-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .speed-input {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="range" class="speed-input" min="0" max="100" step="1" value="0" oninput="setSpeed(this.value)">
+    
+    <div class="speed-meter">
+        <div class="speed-needle"></div>
+        <div class="speed-value" id="speedValue">0</div>
+    </div>
+
+    <script>
+        const speedMeter = document.querySelector('.speed-meter');
+        const speedNeedle = document.querySelector('.speed-needle');
+        const speedValueElement = document.getElementById('speedValue');
+        const speedInput = document.querySelector('.speed-input');
+
+        function setSpeed(speed) {
+            const angle = (speed / 100) * 360;
+            speedNeedle.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+            speedValueElement.textContent = speed;
+        }
+
+        // Update the speed meter when the input changes
+        speedInput.addEventListener('input', () => {
+            setSpeed(speedInput.value);
+        });
+    </script>
+
+</body>
+</html>

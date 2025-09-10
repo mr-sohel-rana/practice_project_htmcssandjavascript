@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+font-family: Arial, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background-color: #e69a03;
+}
+.scroll-container {
+overflow: hidden;
+width: 300px;
+border: 1px solid #3498db;
+position: relative;
+margin-bottom: 10px;
+}
+.scroll-text {
+font-size: 30px;
+white-space: nowrap;
+animation: scrollAnimation linear infinite;
+}
+input[type="range"] {
+width:300px;
+}
+ @keyframes scrollAnimation {
+from {
+transform: translateX(100%);
+}
+to {
+transform: translateX(-100%);
+}
+}
+</style>
+</head>
+<body>
+<div class="scroll-container">
+<div class="scroll-text">
+This is an auto-scrolling text. Adjust the speed below:
+</div>
+</div>
+ <input type="range" id="speedControl" min="1" max="10" step="1" value="5">
+
+<script>
+const speedControl = document.getElementById('speedControl');
+const scrollText = document.querySelector('.scroll-text');
+speedControl.addEventListener('input', updateSpeed);
+function updateSpeed() {
+const speed = speedControl.value;
+const scrollDuration = 10 / speed;
+scrollText.style.animationDuration = `${scrollDuration}s`;
+        }
+    </script>
+</body>
+</html>

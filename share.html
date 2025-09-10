@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .share-icon-container {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .share-icon {
+            font-size: 36px;
+            color: #3498db;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-icons {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #3498db;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            background-color: #2980b9;
+        }
+
+        .share-icon-container:hover .share-icon {
+            color: #2980b9;
+        }
+
+        .share-icon-container:hover .social-icons {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="share-icon-container">
+        <div class="share-icon">&#x263A;</div>
+        <div class="social-icons">
+            <a href="#" target="_blank">&#xf09a;</a> <!-- FontAwesome Facebook Icon -->
+            <a href="#" target="_blank">&#xf099;</a> <!-- FontAwesome Twitter Icon -->
+            <a href="#" target="_blank">&#xf16d;</a> <!-- FontAwesome Linkedin Icon -->
+            <a href="#" target="_blank">&#xf0d5;</a> <!-- FontAwesome Reddit Icon -->
+        </div>
+    </div>
+</body>
+</html>

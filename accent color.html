@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background-color: #f0f0f0;
+}
+.color-options {
+display: flex;
+gap: 20px;
+}
+input[type="radio"] {
+display: none;
+}
+label {
+cursor: pointer;
+margin-right: 10px;
+}
+input[type="radio"] + label::before {
+content: '';
+display: inline-block;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+border: 4px solid #3498db;
+margin-right: 5px;
+vertical-align: middle;
+ }
+input[type="radio"]:checked + label::before {
+background-color: #f308e3;
+}
+#red { border-color: #e74c3c; }
+#green { border-color: #2ecc71; }
+#blue { border-color: #3498db; }
+</style>
+</head>
+<body>
+<div class="color-options">
+<input type="radio" id="red" name="color" checked>
+<label for="red">Red</label>
+<input type="radio" id="green" name="color">
+<label for="green">Green</label>
+<input type="radio" id="blue" name="color">
+<label for="blue">Blue</label>
+</div>
+</body>
+</html>

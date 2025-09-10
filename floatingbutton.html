@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>floating Button</title>
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+ background-color: azure;
+ }
+
+.floating-button {
+ margin-top: 150px;
+margin-left: 450px;
+background-color: #fb350e;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+border-radius: 15px;
+box-shadow: 0 0 15px rgb(245, 243, 243);
+animation: blink 1.5s infinite;  
+}
+        @keyframes blink {
+    0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="floating-button">subscribe</button>
+
+</body>
+</html>

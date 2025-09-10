@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple HTML Editor</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #080606;
+   margin: 0;
+  }
+
+#editor-container {
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #fff;
+  box-shadow: 0 0 5px white;
+  border-radius: 8px;
+  padding: 20px;
+    }
+
+textarea {
+flex: 1;
+margin-bottom: 10px;
+padding: 10px;
+box-sizing: border-box;
+    }
+
+#iframe-container {
+flex: 1;
+overflow: hidden;
+border: 1px solid #ccc;
+border-radius: 4px;
+    }
+
+#format-buttons,
+#run-button {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 8px 12px;
+      font-size: 14px;
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    #run-button button {
+      background-color: #0f9d58;
+    }
+  </style>
+</head>
+<body>
+
+<div id="editor-container">
+  <textarea id="html-input" placeholder="Type your HTML here..."></textarea>
+  <div id="format-buttons">
+    <button onclick="formatText('bold')">Bold</button>
+    <button onclick="formatText('italic')">Italic</button>
+    <button onclick="formatText('underline')">Underline</button>
+  </div>
+  <div id="run-button">
+    <button onclick="runCode()">Run</button>
+  </div>
+  <div id="iframe-container">
+    <iframe id="output-iframe"></iframe>
+  </div>
+</div>
+
+<script>
+  function formatText(command) {
+    document.execCommand(command, false, null);
+  }
+
+  function runCode() {
+    const htmlInput = document.getElementById("html-input");
+    const outputIframe = document.getElementById("output-iframe");
+    outputIframe.contentDocument.body.innerHTML = htmlInput.value;
+  }
+</script>
+
+</body>
+</html>

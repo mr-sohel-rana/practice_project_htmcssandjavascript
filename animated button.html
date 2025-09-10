@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background-color: #025b9a;
+}
+.animated-button {
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+background-color: #1ee908;
+color: #e00bf8;
+text-decoration: none;
+border: 2px solid transparent;
+border-radius: 20px;
+transition: border 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.animated-button:hover {
+border:5px solid #ffffff;
+color:white;
+transform: rotate(360deg);
+}
+</style>
+</head>
+<body>
+    <a href="#" class="animated-button">Hover me</a>
+</body>
+</html>

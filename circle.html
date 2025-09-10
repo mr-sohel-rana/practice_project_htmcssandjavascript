@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlight Effect</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: rgb(17, 17, 18);
+        }
+
+        #spotlight {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, transparent 1%, rgba(252, 250, 250, 0.8) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="spotlight"></div>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const spotlight = document.getElementById('spotlight');
+            spotlight.style.left = e.pageX + 'px';
+            spotlight.style.top = e.pageY + 'px';
+        });
+    </script>
+
+</body>
+</html>

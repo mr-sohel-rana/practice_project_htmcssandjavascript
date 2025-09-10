@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Toggle Button</title>
+  <style>
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #080707;
+  margin: 0;
+    }
+
+#toggle-container {
+  position: relative;
+    }
+
+#toggle-button {
+  width: 80px;
+  height: 40px;
+  background-color: #ecf008;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+    }
+
+#toggle-button::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  background-color: #0ddad3;
+  border-radius: 50%;
+  transition: transform 0.3s;
+    }
+
+#toggle-container.on #toggle-button {
+  background-color: #4caf50; 
+    }
+
+    #toggle-container.on #toggle-button::before {
+      transform: translateX(40px);
+    }
+
+    #toggle-text {
+      margin-left: 10px;
+      font-size: 18px;
+      color:  white;
+    }
+  </style>
+</head>
+<body>
+
+<div id="toggle-container" class="off">
+  <div id="toggle-button"></div>
+  <div id="toggle-text">Off</div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleContainer =
+     document.getElementById("toggle-container");
+    const toggleButton =
+     document.getElementById("toggle-button");
+    const toggleText = document.getElementById("toggle-text");
+
+    toggleContainer.addEventListener("click", function () {
+      toggleContainer.classList.toggle("on");
+      const isOn = toggleContainer.classList.contains("on");
+      toggleText.textContent = isOn ? "On" : "Off";
+    });
+  });
+</script>
+
+</body>
+</html>

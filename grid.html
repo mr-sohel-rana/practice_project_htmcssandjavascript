@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: auto 1fr auto;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer, .sidebar-left, .sidebar-right, .content {
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        header, footer {
+            grid-column: 1 / -1;
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .sidebar-left {
+            background-color: #2ecc71;
+        }
+
+        .sidebar-right {
+            background-color: #e74c3c;
+        }
+
+        .content {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Header
+    </header>
+
+    <aside class="sidebar-left">
+        Left Sidebar
+    </aside>
+
+    <main class="content">
+        Center Content
+    </main>
+
+    <aside class="sidebar-right">
+        Right Sidebar
+    </aside>
+
+    <footer>
+        Footer
+    </footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+ body {
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+     background-color: #222;
+ overflow: hidden;
+        }
+
+.ping-pong-ball {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+position: absolute;
+box-shadow: 0 0 5px rgb(241, 249, 4);
+}
+
+.ball-1 {
+ top: 150px;
+left: 150px;
+background-color: #3498db;
+animation: bounce-1 2s infinite alternate ease-in-out;
+ }
+
+.ball-2 {
+ top: 150px;
+left: 180px;
+background-color: #2ecc71;
+animation: bounce-2 3s infinite alternate ease-in-out;
+}
+
+.ball-3 {
+top: 150px;
+ left: 210px;
+background-color: #e74c3c;
+animation: bounce-3 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes bounce-1 {
+ 0% {
+transform: translateY(0);
+ }
+100% {
+    transform: translateY(20vh);
+ }
+}
+
+@keyframes bounce-2 {
+0% {
+transform: translateY(0);
+    }
+            100% {
+                transform: translateY(20vh);
+            }
+        }
+
+        @keyframes bounce-3 {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(20vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ping-pong-ball ball-1"></div>
+    <div class="ping-pong-ball ball-2"></div>
+    <div class="ping-pong-ball ball-3"></div>
+</body>
+</html>

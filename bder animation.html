@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .animated-button {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #ffffff;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: border 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .animated-button:hover {
+            border-color: #ffffff;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="animated-button">Hover me</a>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+ body {
+ display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background-color: #222;
+overflow: hidden;
+        }
+
+.bouncing-ball {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+background-color: #d8f005;
+box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+animation: bounce 1s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+0% {
+transform: translateY(0);
+box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+ }
+100% {
+ transform: translateY(30vh);
+                box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bouncing-ball"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ball = document.querySelector('.bouncing-ball');
+
+            ball.addEventListener('mouseover', () => {
+                ball.style.animationPlayState = 'paused';
+            });
+
+            ball.addEventListener('mouseout', () => {
+                ball.style.animationPlayState = 'running';
+            });
+        });
+    </script>
+</body>
+</html>

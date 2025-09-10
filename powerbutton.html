@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Button with Light</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    #power-button {
+      position: relative;
+      cursor: pointer;
+      padding: 20px;
+      font-size: 16px;
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      outline: none;
+      overflow: hidden;
+      transition: background-color 0.3s;
+    }
+
+    #power-light {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    #power-button.active {
+      background-color: #f44336;
+    }
+
+    #power-button.active #power-light {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<button id="power-button" onclick="togglePower()">
+  <div id="power-light"></div>
+  Power
+</button>
+
+<script>
+  const powerButton = document.getElementById('power-button');
+
+  function togglePower() {
+    powerButton.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>

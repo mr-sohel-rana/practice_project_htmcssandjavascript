@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+  <title>Dark Mode Toggle</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #toggle-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    #toggle-label {
+      margin-right: 10px;
+    }
+
+    #toggle-button {
+      width: 50px;
+      height: 25px;
+      background-color: #ccc;
+      border-radius: 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      transition: background-color 0.3s;
+    }
+
+    #toggle-button::before {
+      content: "";
+      width: 21px;
+      height: 21px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    #toggle-container.dark-mode #toggle-button {
+      background-color: #333;
+    }
+
+    #toggle-container.dark-mode #toggle-button::before {
+      transform: translateX(25px);
+    }
+    .sub{
+      font-size: 30px;
+      text-align: center;
+      margin-top: 150px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="sub">SUBSCRIBE<br>My Channel</div>
+
+<div id="toggle-container">
+  <div id="toggle-label">Dark Mode</div>
+  <div id="toggle-button"></div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleContainer = document.getElementById("toggle-container");
+
+    toggleContainer.addEventListener("click", function () {
+      toggleContainer.classList.toggle("dark-mode");
+      const isDarkMode = toggleContainer.classList.contains("dark-mode");
+      document.body.style.backgroundColor = isDarkMode ? "#333" : "#fff";
+      document.body.style.color = isDarkMode ? "#fff" : "#333";
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .changing-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            animation: changeText 4s linear infinite;
+        }
+
+        @keyframes changeText {
+            0%, 25% {
+                content: "Web Designer";
+            }
+            25%, 50% {
+                content: "Programmer";
+            }
+            50%, 75% {
+                content: "Content Creator";
+            }
+            75%, 100% {
+                content: "Enthusiast";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="changing-text"></div>
+
+    <script>
+        const textElement = document.querySelector('.changing-text');
+        textElement.textContent = "Web Designer"; // Initial text
+
+        // Function to change the text content
+        function changeTextContent() {
+            const textContents = ["Web Designer", "Programmer", "Content Creator", "Enthusiast"];
+            let index = 0;
+
+            setInterval(() => {
+                textElement.textContent = textContents[index];
+                index = (index + 1) % textContents.length;
+            }, 4000); // Change text every 4 seconds
+        }
+
+        // Call the function to start changing text
+        changeTextContent();
+    </script>
+</body>
+</html>

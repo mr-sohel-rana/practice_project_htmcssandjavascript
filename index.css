@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(114, 84, 251, 0.8);
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.nav-links a:hover {
+    border-bottom: 2px solid gray;
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+}
+
+.background-image {
+    background-image: url("b3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    margin-left: -600px;
+    color: white;
+    font-weight: 600;
+}
+p{
+color: white;
+font-size: 20px;
+margin-left: -600px;
+text-align: center;
+}
+
+.animated-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #3498db;
+    color: #3498db;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    color: white;
+font-size: 20px;
+margin-left: -600px;
+text-align: center;
+  }
+
+  .animated-button:hover {
+    border-width: 8px; 
+    padding: 6px 16px; 
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgb(3, 3, 3); 
+    background-color: black;
+    color: white;
+  }
+
+  .animated-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .animated-button:hover::before {
+    border: 2px solid #d515a5;  
+    transform: scaleX(1.5) scaleY(1.2);  
+  }
+
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

@@ -1,0 +1,39 @@
+body{
+    background: rgb(169, 241, 241);
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin:140px;
+}
+.container.box{
+    width: 600px;
+    background: rgb(245, 96, 247);
+    display: table;
+    
+}
+.container.box.box-row{
+    display: table-row;
+}
+.container .box .box-row .box-cell{
+    display: table-cell;
+    width: 25%;
+    padding: 20px;
+    font-family: arial;
+}
+.container .box .box-row .box-cell.box1{
+    background: blue;
+    color: white;
+}
+.container .box .box-row .box-cell.box2{
+    background: rgb(209, 236, 8);
+    color: white;
+}
+.container .box .box-row .box-cell.box3{
+    background: blue;
+    color: white;
+}
+.container .box .box-row .box-cell.box4{
+    background: rgb(209, 236, 8);
+    color: white;
+}
